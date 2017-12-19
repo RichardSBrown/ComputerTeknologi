@@ -54,7 +54,7 @@ namespace UpOrDownFiles
             if (RowCount == 1)
             {
                 MessageBox.Show("Loged on");
-                // Go on with the program
+                // Closes this form and goes back to main
                 this.Close();
             }
 
