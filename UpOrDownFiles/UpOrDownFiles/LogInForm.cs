@@ -28,8 +28,6 @@ namespace UpOrDownFiles
         {
             int RowCount = 0;
             
-
-
             // This is the info of the database that we are gonna login to
             string databasePatch = "Server=Localhost;Database=filedatabase;UID=root; Pwd=;";
             // Makes the connection to the database
