@@ -1,0 +1,1 @@
+x2: means there is more then one user with that username and password. In order to fix this go check the database and delete or edit one of them.
