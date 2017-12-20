@@ -42,7 +42,7 @@ namespace UpOrDownFiles
             database.Open();
 
             // A Sql qurry that get the Uploader, Url And how many downloads the file had
-            string sql = "SELECT UserName , Status , Created FROM log WHERE 1";
+            string sql = "SELECT UserName , Status , Created FROM log ORDER BY `log`.`Created` DESC";
 
             // Dunno ???
             MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(sql, database);

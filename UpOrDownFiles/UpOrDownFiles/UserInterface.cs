@@ -224,10 +224,5 @@ namespace UpOrDownFiles
             // Shuts down the form we have open atm (UserInterface.cs) 
             this.Close();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

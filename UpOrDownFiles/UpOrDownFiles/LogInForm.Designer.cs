@@ -40,24 +40,26 @@
             this.Butexe.Location = new System.Drawing.Point(197, 100);
             this.Butexe.Name = "Butexe";
             this.Butexe.Size = new System.Drawing.Size(75, 23);
-            this.Butexe.TabIndex = 0;
+            this.Butexe.TabIndex = 2;
             this.Butexe.Text = "Log-in";
             this.Butexe.UseVisualStyleBackColor = true;
             this.Butexe.Click += new System.EventHandler(this.Butexe_Click);
             // 
             // TxtPassword
             // 
+            this.TxtPassword.AcceptsReturn = true;
             this.TxtPassword.Location = new System.Drawing.Point(65, 47);
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(100, 20);
-            this.TxtPassword.TabIndex = 2;
+            this.TxtPassword.TabIndex = 1;
+            this.TxtPassword.UseSystemPasswordChar = true;
             // 
             // TxtUserName
             // 
             this.TxtUserName.Location = new System.Drawing.Point(65, 9);
             this.TxtUserName.Name = "TxtUserName";
             this.TxtUserName.Size = new System.Drawing.Size(100, 20);
-            this.TxtUserName.TabIndex = 1;
+            this.TxtUserName.TabIndex = 0;
             // 
             // label1
             // 
