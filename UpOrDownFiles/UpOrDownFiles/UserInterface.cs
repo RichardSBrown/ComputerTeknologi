@@ -96,6 +96,7 @@ namespace UpOrDownFiles
             // Gets the value of cells[1] from the row the user selected
             Filename = dataGridView1.CurrentRow.Cells[1].Value.ToString();
 
+
             // This is the info of the database that we are gonna login to
             string databasePatch = "Server=Localhost;Database=filedatabase;UID=root; Pwd=;";
             // Makes the connection to the database
