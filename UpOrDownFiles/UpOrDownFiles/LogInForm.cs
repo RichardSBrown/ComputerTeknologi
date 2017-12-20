@@ -24,6 +24,8 @@ namespace UpOrDownFiles
             UserCheck();
         }
 
+        public static string LoggedUserName;
+
         void UserCheck()
         {
             int RowCount = 0;
@@ -51,7 +53,7 @@ namespace UpOrDownFiles
             // If it only finds one row, there is no problem the user exist and is the only one, therefor he/she can log on
             if (RowCount == 1)
             {
-                MessageBox.Show("Loged on");
+                LoggedUserName = TxtUserName.Text;
                 // Closes this form and goes back to main
                 this.Close();
             }
