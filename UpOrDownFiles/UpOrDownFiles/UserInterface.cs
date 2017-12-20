@@ -82,11 +82,17 @@ namespace UpOrDownFiles
                 MySqlCommand AddToDataBase = new MySqlCommand(sql, database);
                 // Sends to the database and are rdy to receive a input from the data base
                 MySqlDataReader reader = AddToDataBase.ExecuteReader();
-
-                // Copys the file from where it is right now til where you want to be
-                File.Copy(UserFile.FileName, dest);
-                // Make sure the data grid reloads so you can see the file you just downloaded or uploaded
-                FillTheData();
+                try
+                {
+                    // Copys the file from where it is right now til where you want to be
+                    File.Copy(UserFile.FileName, dest);
+                    // Make sure the data grid reloads so you can see the file you just downloaded or uploaded
+                    FillTheData();
+                }
+                catch
+                {
+                    MessageBox.Show("File already exists, please change the name of the file and try again");
+                }
             }
         }
 

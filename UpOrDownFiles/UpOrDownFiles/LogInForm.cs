@@ -70,5 +70,28 @@ namespace UpOrDownFiles
                 MessageBox.Show("Wrong username or password");
             }
         }
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                e.Handled = true;
+                UserCheck();
+            }
+        }
+
+        private void TxtPassword_TextChanged(object sender, EventArgs e)
+        {
+            // Everytime the textbox is changed it checks what key it was, if it was 13(Enter) it goes on with the login
+            this.TxtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckKeys);
+        }
+        private void CheckKeys(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            // Ketchar(13) = Enter key
+            if (e.KeyChar == (char)13)
+            {
+                // Then Enter key was pressed, and therefor go on with the usercheck
+                UserCheck();
+            }
+        }
     }
 }
