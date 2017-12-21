@@ -91,6 +91,7 @@
             this.Controls.Add(this.ButUpload);
             this.Name = "UserInterface";
             this.Text = "Form1";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

@@ -68,6 +68,7 @@ namespace UpOrDownFiles
             else
             {
                 MessageBox.Show("Wrong username or password");
+                TxtPassword.Text = "";
             }
         }
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)

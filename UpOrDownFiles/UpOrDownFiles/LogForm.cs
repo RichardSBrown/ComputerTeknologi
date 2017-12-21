@@ -44,13 +44,13 @@ namespace UpOrDownFiles
             // A Sql qurry that get the Uploader, Url And how many downloads the file had
             string sql = "SELECT UserName , Status , Created FROM log ORDER BY `log`.`Created` DESC";
 
-            // Dunno ???
+            // mySqlDataAdapter is the interface between the Data set and the database itself (Link: https://dev.mysql.com/doc/connector-net/en/connector-net-tutorials-data-adapter.html)
             MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(sql, database);
-            // Dunno ???
+            // New Dataset, we'll  use it later for the gridview
             DataSet DS = new DataSet();
-            // Dunno ???
+            // Comepines the adapter and dataset, and fills the adapter with data from the dataset
             mySqlDataAdapter.Fill(DS);
-            // Dunno ???
+            // DataSource tell the dataGridView where it gets the data from
             dataGridView1.DataSource = DS.Tables[0];
         }
     }

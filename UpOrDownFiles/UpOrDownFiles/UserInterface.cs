@@ -17,8 +17,10 @@ namespace UpOrDownFiles
     public partial class UserInterface : Form
     {
         public string Filename;
-
+        // This is where files you upload end up aka. The fileserver
         public string RootFolder = @"C:\Users\Richard Brown Thomse\Documents\ComputerTeknologi\Filer\";
+        // This is the place where the files you downloaded end up
+        public string DonwloadFolder = @"C:\Users\Richard Brown Thomse\Documents\ComputerTeknologi\Downloadede filer\";
         // Status to declare if it a down or upload. FALSE is upload and TRUE is download
         public bool status;
 
@@ -26,6 +28,7 @@ namespace UpOrDownFiles
         {
             InitializeComponent();
             FillTheData();
+            
         }
 
         private void butUpload_Click(object sender, EventArgs e)
@@ -144,7 +147,7 @@ namespace UpOrDownFiles
             AddToLog();
             WebClient webClient = new WebClient();
             // Download a file first Where does it get it from, then where does it put it.
-            webClient.DownloadFile(FullURL, @"C:\Users\Richard Brown Thomse\Documents\ComputerTeknologi\Downloadede filer\" + Filename);
+            webClient.DownloadFile(FullURL, DonwloadFolder + Filename);
 
             // Now that we got the file down on the PC we need to make sure we send back that we downloaded the file
             sql = "UPDATE `files` SET `Downloads`= '" + Downloads + "' WHERE FileName = '" + Filename + "'";
@@ -209,13 +212,13 @@ namespace UpOrDownFiles
             // A Sql qurry that get the Uploader, Url And how many downloads the file had
             string sql = "SELECT Uploader , FileName , Downloads FROM files WHERE 1";
 
-            // Dunno ???
+            // mySqlDataAdapter is the interface between the Data set and the database itself (Link: https://dev.mysql.com/doc/connector-net/en/connector-net-tutorials-data-adapter.html)
             MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(sql, database);
-            // Dunno ???
+            // New Dataset, we'll  use it later for the gridview
             DataSet DS = new DataSet();
-            // Dunno ???
+            // Comepines the adapter and dataset, and fills the adapter with data from the dataset
             mySqlDataAdapter.Fill(DS);
-            // Dunno ???
+            // DataSource tell the dataGridView where it gets the data from
             dataGridView1.DataSource = DS.Tables[0];
         }
 
