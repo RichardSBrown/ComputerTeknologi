@@ -18,6 +18,7 @@ namespace UpOrDownFiles
             Application.Run(new LogInForm());
             // Then after the user have loged in it opens up the UserInterface
             Application.Run(new UserInterface());
+            
         }
     }
 }

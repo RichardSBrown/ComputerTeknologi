@@ -17,6 +17,8 @@ namespace UpOrDownFiles
         public LogInForm()
         {
             InitializeComponent();
+            // Everytime a key is pressed it checks what key it was, if it was 13(Enter) it goes on with the login
+            this.TxtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckKeys);
         }
 
         private void Butexe_Click(object sender, EventArgs e)
@@ -80,11 +82,6 @@ namespace UpOrDownFiles
             }
         }
 
-        private void TxtPassword_TextChanged(object sender, EventArgs e)
-        {
-            // Everytime the textbox is changed it checks what key it was, if it was 13(Enter) it goes on with the login
-            this.TxtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckKeys);
-        }
         private void CheckKeys(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
             // Ketchar(13) = Enter key

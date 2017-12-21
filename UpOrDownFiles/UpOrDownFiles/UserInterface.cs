@@ -26,9 +26,10 @@ namespace UpOrDownFiles
 
         public UserInterface()
         {
+            this.BringToFront();
             InitializeComponent();
+            // Fills the data in to the datagrid from the database
             FillTheData();
-            
         }
 
         private void butUpload_Click(object sender, EventArgs e)
@@ -77,6 +78,10 @@ namespace UpOrDownFiles
                 // Inserts the Url and other things into the database
                 sql = "INSERT INTO `files`( `Uploader`, `FileName` ,`Url`) VALUES ('" + LogInForm.LoggedUserName + "' , '" + Path.GetFileName(UserFile.FileName) + "' , 'Dokumenter')";
                 ReadyToSend = true;
+            }
+            else
+            {
+                MessageBox.Show("Sorry we dont accpet that file type, you can only upload jpg,txt and docx");
             }
             
             if (ReadyToSend == true)
@@ -194,10 +199,6 @@ namespace UpOrDownFiles
             MySqlCommand AddToLog = new MySqlCommand(sql, database);
             // Sends to the database and are rdy to receive a input from the data base
             MySqlDataReader reader = AddToLog.ExecuteReader();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
         }
 
         private void FillTheData()

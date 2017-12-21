@@ -68,7 +68,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(595, 328);
             this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // butShowLog
             // 
@@ -91,7 +90,6 @@
             this.Controls.Add(this.ButUpload);
             this.Name = "UserInterface";
             this.Text = "Form1";
-            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
